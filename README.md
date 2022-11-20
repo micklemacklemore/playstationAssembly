@@ -172,6 +172,13 @@ TADAA, now we can draw more rectangles!
 
 
 ## Ex 4: Rectangle Wrap Around <a name="Exercise-4"></a>
+
+This is an extension of the last exercise. What if I want my rectangles to 'wraparound' the screen, like the spaceship Asteroids or Mario & Luigi in Mario Bros.?
+
+More info on Wrap-around in video games: https://en.wikipedia.org/wiki/Wraparound_(video_games)
+
+And so I extended by sub_drawRectangle subroutine to do that...
+
 ![Ex4WrapAroundRectangle](https://user-images.githubusercontent.com/56715549/202927567-5c02c0d7-251d-4b41-a093-a0113e8669f2.png)
 
 
