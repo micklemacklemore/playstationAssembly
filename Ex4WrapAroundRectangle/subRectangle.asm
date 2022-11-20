@@ -62,7 +62,7 @@ sw $t0, 0x1810($s0)     ; Set Drawing Offset X=0, Y=0       ( useful especially 
 ;; --------------
 
 ;; clear display area
-li $s0, 0x00000000
+li $s0, 0x00A88B28
 li $s1, 0
 li $s2, 0
 li $s3, 400
@@ -70,7 +70,7 @@ li $s4, 400
 jal sub_drawRectangle
 nop
 
-li $s0, 0x000000FF
+li $s0, 0x00B06A74
 li $s1, 50
 li $s2, 5
 li $s3, 10
@@ -78,7 +78,7 @@ li $s4, 5
 jal sub_drawRectangle
 nop
 
-li $s0, 0x0000FF00
+li $s0, 0x004538E8
 li $s1, 10
 li $s2, 10
 li $s3, 50
@@ -86,7 +86,7 @@ li $s4, 40
 jal sub_drawRectangle
 nop
 
-li $s0, 0x0000FFFF
+li $s0, 0x0030CEFF
 li $s1, 120
 li $s2, 100
 li $s3, 27

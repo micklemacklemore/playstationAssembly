@@ -58,12 +58,23 @@ sw $t0, 0x1810($a0)     ; Set Drawing Offset X=0, Y=0       ( useful especially 
 ;; draw rectangle
 ;; --------------
 
+;; fill screen with blue rectangle
 ;; load draw command and parameters to draw rectangle
-li $s1, 0x6000FFFF  ; command for drawing blue rectangle
-li $s2, 0x000400FA  ; width+height of rectangle (10 x 10)
+li $s1, 0x60feb645  ; command for drawing blue rectangle   (rectangle command: x06 | rectangle color: 45b6fe <BbGgRr>)
+li $s2, 0xFFFFFFFF  ; width+height of rectangle (fill entire drawing area)
 
 sw $s1,   0x1810($a0)      ; 1. command + color
 sw $zero, 0x1810($a0)      ; 2. coords of rectangle
+sw $s2,   0x1810($a0)      ; 3. width + height of rectangle
+
+;; draw yellow rectangle
+;; load draw command and parameters to draw rectangle
+li $s1, 0x6000FFFF  ; command for drawing yellow rectangle
+li $s2, 0x00320064  ; width+height of rectangle (10 x 10)
+li $s3, 0x000A000A  ; coords at x = 10, y = 10
+
+sw $s1,   0x1810($a0)      ; 1. command + color
+sw $s3,   0x1810($a0)      ; 2. coords of rectangle
 sw $s2,   0x1810($a0)      ; 3. width + height of rectangle
 
 .close
