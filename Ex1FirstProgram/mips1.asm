@@ -10,15 +10,7 @@
 	add $t0, $s1, $s2  ; register $t0 contains g+h
 	add $t1, $s3, $s4  ; register $t1 contains i+j
 	sub $s0, $t0, $t1  ; f gets $t0 - $t1 
-
-	add $t0, $s1, $s2  ; register $t0 contains g+h
-	add $t1, $s3, $s4  ; register $t1 contains i+j
-	sub $s0, $t0, $t1  ; f gets $t0 - $t1 	
-	li $s0, 1234
-	li $t1, 0x1f800000
-	sw $s0, ($t1)
 end:
 	j	end
-
 
  .close
