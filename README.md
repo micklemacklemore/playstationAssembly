@@ -4,14 +4,14 @@ on top of all the graduate school homework I have!!
 
 # Table of Contents
 1. [Helpful Resources](#Helpful-resources)
-    1. [Playstation 1 Specific](#Playstation-1-Specific)
-    2. [MIPS / Computer Architecture specific](#MIPS-/-Computer-Architecture-specific)
+    1. Playstation 1 Specific
+    2. MIPS / Computer Architecture specific
 2. [Repo Overview](#Repo-overview)
-    1. [Exercise 1: First Program](#Exercise-1)
-    2. [Exercise 2: Draw Rectangle](#Exercise-2)
-    3. [Exercise 3: Rectangle Subroutine](#Exercise-3)
-    4. [Exercise 4: Rectangle Wrap Around](#Exercise-4)
-    4. [Exercise 5: Pong (kind of)](#Exercise-5)
+    1. Exercise 1: First Program
+    2. Exercise 2: Draw Rectangle
+    3. Exercise 3: Rectangle Subroutine
+    4. Exercise 4: Rectangle Wrap Around
+    4. Exercise 5: Pong (kind of)
     
 ## Little Demonstration ("Wow it works!")
 
