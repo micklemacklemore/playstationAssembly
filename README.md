@@ -3,15 +3,21 @@ A repository that contains various coding exercises for self-teaching MIPS assem
 on top of all the graduate school homework I have!!
 
 # Table of Contents
-1. [Helpful Resources](#Helpful-resources)
-    1. [Playstation 1 Specific](#Playstation-1-Specific)
-    2. [MIPS / Computer Architecture specific](#MIPS-/-Computer-Architecture-specific)
-2. [Repo Overview](#Repo-overview)
-    1. [Exercise 1: First Program](#Exercise-1)
-    2. [Exercise 2: Draw Rectangle](#Exercise-2)
-    3. [Exercise 3: Rectangle Subroutine](#Exercise-3)
-    4. [Exercise 4: Rectangle Wrap Around](#Exercise-4)
-    4. [Exercise 5: Pong (kind of)](#Exercise-5)
+  * [Little Demonstration ("Wow it works!")](#little-demonstration---wow-it-works---)
+  * [Helpful resources](#helpful-resources)
+    + [Playstation 1 Specific](#playstation-1-specific)
+    + [MIPS / Computer Architecture specific](#mips---computer-architecture-specific)
+- [Repo overview](#repo-overview)
+  * [Ex 1: First Program](#ex-1--first-program)
+  * [Ex 2: Draw Rectangle](#ex-2--draw-rectangle)
+  * [Ex 3: Rectangle Subroutine<a name="Exercise-3"></a>](#ex-3--rectangle-subroutine-a-name--exercise-3----a-)
+  * [Ex 4: Rectangle Wrap Around](#ex-4--rectangle-wrap-around)
+  * [Ex 5: Pong (almost...)](#ex-5--pong--almost-)
+      - [The code now runs in a loop!](#the-code-now-runs-in-a-loop-)
+      - [I finally got around to using a stack!](#i-finally-got-around-to-using-a-stack-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
     
 ## Little Demonstration ("Wow it works!")
 
@@ -48,7 +54,7 @@ LOOK AT ALL MY BOOKS!!
 
 # Repo overview
 
-## Ex 1: First Program <a name="Exercise-1"></a>
+## Ex 1: First Program
 
 **"OK, so how do I actually get any code to run on the Playstation 1?"**
 
@@ -87,7 +93,7 @@ Since we print nothing to the actual screen... I'm instead showing you a screens
 
 ![Ex1](https://user-images.githubusercontent.com/56715549/202927548-0098405d-69b7-4725-b777-a9640dd8c200.png)
 
-## Ex 2: Draw Rectangle <a name="Exercise-2"></a>
+## Ex 2: Draw Rectangle
 This is a little more fun. I started looking at the Playstation's GPU. Through memory, you can send commands to the GPU to draw stuff. There is a specific command for drawing rectangles. I think usually this command is used for drawing sprites because there looks like there's some options for drawing the rectangle with an alpha texture...
 
 This was quite difficult only because, before you can actually draw anything, you need some boiler plate code to set up the:
@@ -172,7 +178,7 @@ TADAA, now we can draw more rectangles!
 ![Ex3SubRectangle](https://user-images.githubusercontent.com/56715549/202927563-c1391fce-45da-4066-9435-b6a31efc9c98.png)
 
 
-## Ex 4: Rectangle Wrap Around <a name="Exercise-4"></a>
+## Ex 4: Rectangle Wrap Around
 
 This is an extension of the last exercise. What if I want my rectangles to 'wraparound' the screen, like the spaceship Asteroids or Mario & Luigi in Mario Bros.?
 
@@ -183,7 +189,7 @@ And so I extended by sub_drawRectangle subroutine to do that...
 ![Ex4WrapAroundRectangle](https://user-images.githubusercontent.com/56715549/202927567-5c02c0d7-251d-4b41-a093-a0113e8669f2.png)
 
 
-## Ex 5: Pong (almost...) <a name="Exercise-5"></a>
+## Ex 5: Pong (almost...)
 How are controller peripherals managed through memory-mapped I/O? Knowing this, can we move some rectangles?
 
 ![record](https://user-images.githubusercontent.com/56715549/206827782-ebd05a1e-f15d-4804-992a-55c4a49cd958.gif)
