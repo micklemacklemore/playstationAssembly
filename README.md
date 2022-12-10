@@ -11,6 +11,7 @@ on top of all the graduate school homework I have!!
     2. [Exercise 2: Draw Rectangle](#Exercise-2)
     3. [Exercise 3: Rectangle Subroutine](#Exercise-3)
     4. [Exercise 4: Rectangle Wrap Around](#Exercise-4)
+    4. [Exercise 5: Pong (kind of)](#Exercise-5)
     
 ## Little Demonstration ("Wow it works!")
 
@@ -182,5 +183,72 @@ And so I extended by sub_drawRectangle subroutine to do that...
 ![Ex4WrapAroundRectangle](https://user-images.githubusercontent.com/56715549/202927567-5c02c0d7-251d-4b41-a093-a0113e8669f2.png)
 
 
-## Ex 5: TBD <a name="Exercise-5"></a>
-Planning on figuring out how controller peripherals are managed on memory and make a little game where you can move some rectangles.
+## Ex 5: Pong (almost...) <a name="Exercise-5"></a>
+How are controller peripherals managed through memory-mapped I/O? Knowing this, can we move some rectangles?
+
+![record](https://user-images.githubusercontent.com/56715549/206827782-ebd05a1e-f15d-4804-992a-55c4a49cd958.gif)
+
+This is about as far as I got! I can't say much about the code other than it's getting a bit hairy. 
+
+Things of note:
+
+#### The code now runs in a loop! 
+
++ Within the loop, it checks for player input, and if the player has pressed the up, down, left or right buttons, the x and y coordinates of the rectangle are updated accordingly. 
+  + the x and y coordinates are stored in data memory! More specifically it's stored in the Playstation's "scratchpad", which is the machine's fastest cache memory. Not exactly sure how cached memory works but I guess it's the fastest *shrug*
+  + the loop can only go as fast as the GPU: GPU must finish drawing to the video buffer / display first before we can continue the loop, otherwise we get weirdness and "flickering"
+  
+#### I finally got around to using a stack! 
++ MIPS chips by convention uses registers 29 & 30 as the stack pointer and the frame pointer!
++ the stack pointer is initialised by (playstation BIOS? the assembler?) BUT it's up to the programmer (me) to update the stack pointer if I need to push anything on the stack or pop it  
+  
+pseudo-code assembly below:
+
+```asm
+;; draw rectangle
+;; --------------
+
+OutdatedPadInitAndStart: 
+  li t1,0x15
+  li a0,0x20000001
+  li t2,0xB0
+  li a1, 0x1f800000 ; Set Pad Buffer Address To Automatically Update Each Frame
+  jalr t2 ; Jump To BIOS Routine OutdatedPadInitAndStart()
+  nop ; Delay Slot
+
+;; make room on stack for arguments
+addi $sp, $sp, -20
+li $s0, 0x1f800000
+
+;; set 'x pos' and store in scratch pad
+li $t0, 10
+sw $t0, 16(s0)
+
+;; set 'y pos' and store in scratch pad
+li $t1, 100
+sw $t1, 20(s0)
+
+loop:
+PRESSRIGHT:
+  ; press right? update x pos =+ 1
+
+PRESSLEFT:
+  ; press right? update x pos =- 1
+
+PRESSUP:
+  ; press up? update y pos =+ 1
+
+PRESSDOWN:
+ ; press down? update y pos =- 1
+
+draw: 
+   ; finally draw the rectangle with updated 'y pos' and 'x pos'
+   
+
+Wait:                   ; Wait For Vertical Retrace Period & Store XOR Pad Data
+   ; loop within loop that waits for the GPU to 
+   ; finish drawing
+
+j loop
+nop
+```
