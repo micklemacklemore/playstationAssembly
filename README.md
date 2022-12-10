@@ -1,23 +1,6 @@
 # playstationAssembly
 A repository that contains various coding exercises for self-teaching MIPS assembly on the Sony Playstation 1! All work here is done in my own time,
 on top of all the graduate school homework I have!!
-
-# Table of Contents
-  * [Little Demonstration ("Wow it works!")](#little-demonstration---wow-it-works---)
-  * [Helpful resources](#helpful-resources)
-    + [Playstation 1 Specific](#playstation-1-specific)
-    + [MIPS / Computer Architecture specific](#mips---computer-architecture-specific)
-- [Repo overview](#repo-overview)
-  * [Ex 1: First Program](#ex-1--first-program)
-  * [Ex 2: Draw Rectangle](#ex-2--draw-rectangle)
-  * [Ex 3: Rectangle Subroutine<a name="Exercise-3"></a>](#ex-3--rectangle-subroutine-a-name--exercise-3----a-)
-  * [Ex 4: Rectangle Wrap Around](#ex-4--rectangle-wrap-around)
-  * [Ex 5: Pong (almost...)](#ex-5--pong--almost-)
-      - [The code now runs in a loop!](#the-code-now-runs-in-a-loop-)
-      - [I finally got around to using a stack!](#i-finally-got-around-to-using-a-stack-)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
     
 ## Little Demonstration ("Wow it works!")
 
